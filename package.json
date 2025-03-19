@@ -1,0 +1,19 @@
+{
+  "name": "tinderdev",
+  "version": "1.0.0",
+  "description": "Tinder for dev",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
+  },
+  "keywords": [
+    "nodejs",
+    "javascript"
+  ],
+  "author": "Pravin K",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
