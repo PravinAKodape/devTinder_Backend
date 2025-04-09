@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
+require('dotenv').config();
 
 // This covers practice code from season 2 lecture 1 to 5
 
@@ -162,7 +163,7 @@ app.patch("/email", async (req, res) => {
 connectDB()
   .then(() => {
     console.log("Database connection estabilished...");
-    app.listen(7777, () => {
+    app.listen(process.env.PORT, () => {
       console.log("Server is listening on 7777");
     });
   })

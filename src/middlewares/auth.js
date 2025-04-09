@@ -33,7 +33,7 @@ const authUser = async (req , res , next)=>{
       return res.status(401).json({ message: "Please login" });
     }
 
-    const decodedMessage = jwt.verify(token, "DevTinder@123");
+    const decodedMessage = jwt.verify(token, process.env.JWT_SECRET);
     const { _id } = decodedMessage;
 
     const user = await User.findById(_id);
