@@ -36,6 +36,12 @@ const authRouter = require("./routes/auth");
 const profileRouter = require("./routes/profile");
 const requestRouter = require("./routes/request");
 const userRouter = require("./routes/user");
+const initializeSocket = require("./utils/socket");
+
+const http = require("http")
+const server = http.createServer(app);
+
+initializeSocket(server)
 
 
 
@@ -163,7 +169,7 @@ app.patch("/email", async (req, res) => {
 connectDB()
   .then(() => {
     console.log("Database connection estabilished...");
-    app.listen(process.env.PORT, () => {
+    server.listen(process.env.PORT, () => {
       console.log("Server is listening on 7777");
     });
   })
