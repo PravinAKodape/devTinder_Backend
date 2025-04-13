@@ -38,7 +38,8 @@ const requestRouter = require("./routes/request");
 const userRouter = require("./routes/user");
 const initializeSocket = require("./utils/socket");
 
-const http = require("http")
+const http = require("http");
+const chatRouter = require("./routes/chat");
 const server = http.createServer(app);
 
 initializeSocket(server)
@@ -64,6 +65,7 @@ app.use("/" , authRouter);
 app.use("/" , profileRouter);
 app.use("/" , requestRouter);
 app.use("/" , userRouter);
+app.use("/" , chatRouter)
 
 // This are just practice HTTP requests till app.patch"email" hence not added in express Router --> src --> routes--> files
 // Get user by email
